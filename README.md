@@ -22,6 +22,7 @@
      7. Install-Package System.Runtime.InteropServices.RuntimeInformation
      
  ## 2. Architecture/Design implementation
-     Member ( user ) can be books demand and maintain , therefor must be relation to store user and book data in same relation as in image following :
+    
+  Member ( user ) can be books demand and maintain , therefor must be relation to store user and book data in same relation as in image following:
    - dfsdfs
    -sdsafs

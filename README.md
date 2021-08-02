@@ -42,5 +42,12 @@ Architecture
        
 # 3. Diagrams:
 ## 3.1 Class Diagram:
+![4](https://user-images.githubusercontent.com/23058510/127833564-ad442011-a0a5-480e-a726-6e3a357eaf5b.JPG)
+
+## 3.2 Activity Diagram:
+![5](https://user-images.githubusercontent.com/23058510/127833614-7f2878fc-f8e3-4c79-9aa8-430821054263.JPG)
+![6](https://user-images.githubusercontent.com/23058510/127833666-268caafb-8247-4c33-bbb5-9993b713932d.JPG)
+
+## 3.1 Class Diagram:
    - dfsdfs
    -sdsafsdafsf

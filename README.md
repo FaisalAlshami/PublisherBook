@@ -27,6 +27,8 @@
 ![1](https://user-images.githubusercontent.com/23058510/127831694-226d94b9-e831-43ce-a7d9-f70d50214cae.JPG)
 
 Architecture
+![2](https://user-images.githubusercontent.com/23058510/127832549-e6ab8211-9cf3-4dde-9f30-a32d8859b9d9.JPG)
+![3](https://user-images.githubusercontent.com/23058510/127832566-f3dde231-f570-4c81-ae88-b64e86b76183.JPG)
 
 
    - dfsdfs

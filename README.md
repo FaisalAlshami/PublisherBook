@@ -13,8 +13,15 @@
   
    - Libraries mandatory used in Web Application :
      Install labiraries from Package Management Console and all package target framework 4.6 :
+     1. Install-Package MongoDB.Bson -Version 2.3.0
+     2. Install-Package MongoDB.Driver -Version 2.3.0
+     3. Install-Package MongoDB.Driver.Core -Version 2.3.0
+     4. Install-Package mongocsharpdriver -Version 2.3.0
+     5. Install-Package PagedList -Version 1.17.0
+     6. Install-Package PagedList.Mvc -Version 4.5.0
+     7. Install-Package System.Runtime.InteropServices.RuntimeInformation
      
-     
+ ## 2. Architecture/Design implementation
      
    - dfsdfs
    -sdsafs

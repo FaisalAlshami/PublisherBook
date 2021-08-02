@@ -1,4 +1,4 @@
-##1. List of technologies:
+1. List of technologies:
 
  *. Technologies used :
 o Visual studio 2015

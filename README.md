@@ -48,6 +48,6 @@ Architecture
 ![5](https://user-images.githubusercontent.com/23058510/127833614-7f2878fc-f8e3-4c79-9aa8-430821054263.JPG)
 ![6](https://user-images.githubusercontent.com/23058510/127833666-268caafb-8247-4c33-bbb5-9993b713932d.JPG)
 
-## 3.1 Class Diagram:
-   - dfsdfs
-   -sdsafsdafsf
+## 3.3 Sequence Diagram:
+![7](https://user-images.githubusercontent.com/23058510/127833875-74ad9c19-f700-4479-88e1-43cf7a6384fd.JPG)
+

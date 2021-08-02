@@ -1,5 +1,5 @@
 # 1. List of technologies:
-- George Washington
+##- George Washington
 - John Adams
 - Thomas Jefferson
 

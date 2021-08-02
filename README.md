@@ -31,14 +31,14 @@ Architecture
 
 
    - Description functional to web application :
-     - Visual studio 2015
-     - C# 6
-     - ASP.NET MVC 5 (Web Application)
-     - .Net Framework 4.6
-     - ASP.NET Web Api ( Web service )
-     - Mongo DB Server
-     - MongoDb-CSharp driver
-     - NuGet package manager
+     - Home page : show list all books , can be search it from same page and go to detail book.
+     - Login page.
+     - Register page : username is unique key and password more 4 characters.
+     - If user login : Show pages following:
+       - Logout
+       - List books demands to user and can be remove book from list demands from same page
+       - User can be add book to list demands from book page
+     - Web service : Create Web Api as web service
        
 
    - dfsdfs

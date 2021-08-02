@@ -1,4 +1,7 @@
-# -List of technologies:
+# 1. List of technologies:
+- George Washington
+- John Adams
+- Thomas Jefferson
 
  *. Technologies used :
 o Visual studio 2015

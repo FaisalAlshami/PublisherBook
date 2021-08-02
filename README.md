@@ -40,6 +40,7 @@ Architecture
        - User can be add book to list demands from book page
      - Web service : Create Web Api as web service
        
-
+# 3. Diagrams:
+## 3.1 Class Diagram:
    - dfsdfs
    -sdsafsdafsf

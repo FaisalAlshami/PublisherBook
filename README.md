@@ -1,6 +1,5 @@
 # 1. List of technologies:
-   - First nested list item
-     - Second nested list item
+   - Technologies used :
      - Visual studio 2015
      - C# 6
      - ASP.NET MVC 5 (Web Application)
@@ -30,6 +29,17 @@ Architecture
 ![2](https://user-images.githubusercontent.com/23058510/127832549-e6ab8211-9cf3-4dde-9f30-a32d8859b9d9.JPG)
 ![3](https://user-images.githubusercontent.com/23058510/127832566-f3dde231-f570-4c81-ae88-b64e86b76183.JPG)
 
+
+   - Description functional to web application :
+     - Visual studio 2015
+     - C# 6
+     - ASP.NET MVC 5 (Web Application)
+     - .Net Framework 4.6
+     - ASP.NET Web Api ( Web service )
+     - Mongo DB Server
+     - MongoDb-CSharp driver
+     - NuGet package manager
+       
 
    - dfsdfs
    -sdsafsdafsf

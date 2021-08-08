@@ -1,0 +1,72 @@
+﻿@model PagedList.IPagedList<PublisherBooks.Models.Book>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Book";
+}
+<div class="pagetitle"> Books</div>
+
+
+
+@using (Html.BeginForm("Index", "Book", FormMethod.Get))
+{
+    <p>
+       Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table" >
+    <tr style=" text-align:left;">
+         <th >
+           
+        </th>
+        <th class="fontHeaderTable headertable">
+            @Html.ActionLink("Title", "Index",
+            new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }
+            , new { @style="color:#0070ff;",@class= "headertable" })
+        </th>
+         <th class="headertable">
+            @Html.ActionLink("Publisher", "Index",
+            new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }
+            , new { @style="color:#0070ff;"})
+        </th>
+        <th class="headertable">
+            @Html.ActionLink("Authors", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+    
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr style=" border-bottom: 2px solid #dddddd;" class="celldttable">
+             <td style="width:10%; max-width:120px; " class="valignTop">
+                  @Html.ActionLink("Details", "Details", new { oid = item.Id.ToString() })
+            </td>
+            <td style="width:30%; " class="valignTop">
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td style="width:30%; " class="valignTop">
+                @Html.DisplayFor(modelItem => item.Publisher)
+            </td>
+                 <td style="width:20%; " class="valignTop">
+             @foreach (var authitem in item.Authors)
+             {
+                    @Html.DisplayFor(listItem => authitem)<br />
+             }
+</td>
+          
+            
+          
+        </tr>
+        
+       
+    }
+
+</table>
+<hr />
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

@@ -1,0 +1,55 @@
+﻿@model PublisherBooks.Models.ChangePassword
+@{
+    ViewBag.Title = "Change password";
+}
+
+
+<div align="center">
+    <div class="panellogin">
+        <div class="paneltitle"> @ViewBag.Title </div>
+        
+@if (Model.ChangeState.Contains("ok"))
+{
+    <div style="font-size:14pt; margin-top:30px; color:forestgreen; text-align:center; width:100%;">
+        Success change password .
+    </div>
+
+}
+else
+{
+        using (Html.BeginForm("Changepwd", "Account", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            <fieldset class="panelcontent" style=" text-align:left;  float:left; padding-left:30px;">
+                <legend>Registration Form</legend>
+                <ol>
+                    <li>
+                       @Html.LabelFor(m => m.UserName)
+                    <div class="headertable" style="color:red;">@Model.UserName</div>
+                    </li>
+                    <li>
+                        @Html.LabelFor(m => m.Password)
+                        @Html.PasswordFor(m => m.Password)
+                    </li>
+                    <li>
+                        @Html.LabelFor(m => m.ConfirmPassword)
+                        @Html.PasswordFor(m => m.ConfirmPassword)
+                    </li>
+
+                </ol>
+                <input type="submit" value="Save" />
+            </fieldset>
+        }
+}
+            
+            
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

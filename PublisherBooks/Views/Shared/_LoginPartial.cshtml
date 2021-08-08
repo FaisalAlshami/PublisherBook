@@ -1,0 +1,23 @@
+﻿@if (Session["UserID"]!=null)//Request.IsAuthenticated)
+{
+    <text>
+        @Html.ActionLink(Session["UserID"].ToString(), "Changepwd", "Account",
+        routeValues: null, htmlAttributes: new { @style = " padding-left:10px; color: #FFFFFF;font-family: times;font-size: 10pt;",
+            title = "Manage" })
+ @Html.ActionLink("List Demands", "UserListDemand", "UserDemand",new { id = Session["UserID"].ToString() },
+         htmlAttributes: new { @style = " padding-left:10px; color: #FFFFFF;font-family: times;font-size: 10pt;",
+             title = "Manage" })
+
+        @using (Html.BeginForm("Logout", "Login", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <a style="color: #FFFFFF;font-family: times;font-size: 10pt;" 
+                href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+        }
+    </text>
+} else {
+    
+        <li>@Html.ActionLink("Register", "Register", "Register", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Login", "Login", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    
+}

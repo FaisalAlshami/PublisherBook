@@ -1,0 +1,63 @@
+﻿@model PublisherBooks.Models.Book
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2></h2>
+<div class="pagetitle"> The book details</div>
+<br />
+
+<table class="table celldttable">
+
+    <tr>
+        <td class="colLabel valignTop">Title </td>
+        <td class="colValue valignTop">  @Html.DisplayFor(model => model.Title) </td>
+    </tr>
+    <tr>
+        <td class="colLabel valignTop">Publisher </td>
+        <td class="colValue valignTop">  @Html.DisplayFor(model => model.Publisher) </td>
+    </tr>
+     <tr>
+        <td class="colLabel valignTop">Description </td>
+        <td class="colValue valignTop">  @Html.DisplayFor(model => model.Description) </td>
+    </tr>
+    <tr>
+        <td class="colLabel valignTop">Authors </td>
+        <td class="colValue valignTop"> 
+             @foreach (var authitem in Model.Authors)
+             {
+                    @Html.DisplayFor(listItem => authitem)<br />
+             }
+        </td>
+    </tr>
+     <tr>
+        <td class="colLabel"> </td>
+        <td class="colValue">  
+            @if (Session["UserID"]!=null)
+                {
+                           using (Html.BeginForm("DemandBook", "Book", new { oid = Model.Id.ToString(), username = Session["UserID"].ToString() }, FormMethod.Post))
+                           {
+                              <p>
+                                  <input type="submit" value="Add to List Demands" />
+                              </p>
+                           }
+                }
+
+        </td>
+    </tr>
+    <tr>
+        <td class="colLabel"> </td>
+        <td class="colValue">  
+            <p>
+  
+    @Html.ActionLink("Back to List", "Index")
+
+            </p>
+        </td>
+    </tr>
+
+
+
+    
+</table>
+

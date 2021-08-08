@@ -1,0 +1,86 @@
+﻿@model PagedList.IPagedList<PublisherBooks.Models.UserDemand>
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "List Demands";
+}
+<div class="pagetitle"> List Demands</div>
+@using (Html.BeginForm("UserListDemand", "UserDemand", FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+  @Html.ValidationSummary()
+<table class="table" >
+    <tr style=" text-align:left;">
+        <th>
+            
+        </th>
+        <th>
+            @Html.ActionLink("Title", "UserListDemand",
+     new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color:#0070ff;", @class = "headertable" })
+        </th>
+         <th>
+            @Html.ActionLink("Publisher", "UserListDemand",
+            new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color:#0070ff;", @class = "headertable" })
+        </th>
+        <th class="headertable">
+            Description
+        </th>
+        <th>
+            @Html.ActionLink("Authors", "UserListDemand", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }
+        ,new { @class = "headertable" })
+        </th>
+        <th>
+         
+        </th>
+    </tr>
+      @foreach (var item in Model)
+    {
+        <tr style=" border-bottom: 2px solid #dddddd;" class="celldttable">
+             <td style="width:10%; " class="valignTop">
+
+                 @using (Html.BeginForm("Remove", "UserDemand", new { bkid = item.Id.ToString(), usid = item.UserId.ToString() }, FormMethod.Post))
+{
+                       
+    <p>
+        <input type="submit" value="Remove" />
+    </p>
+} 
+            </td>
+            <td style="width:15%; " class="valignTop">
+                @Html.DisplayFor(modelItem => item.UserDemandBook.Title)
+            </td>
+            <td style="width:15%; " class="valignTop">
+                @Html.DisplayFor(modelItem => item.UserDemandBook.Publisher)
+            </td>
+            <td style="width:45%; " class="valignTop">
+                @Html.DisplayFor(modelItem => item.UserDemandBook.Description)
+            </td>
+                 <td style="width:15%; " class="valignTop">
+             @foreach (var authitem in item.UserDemandBook.Authors)
+             {
+                    @Html.DisplayFor(listItem => authitem)<br />
+             }
+</td>
+            <td style="width:45%; " class="valignTop">
+             
+            </td>
+            
+          
+        </tr>
+        
+       
+    }
+
+</table>
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("UserListDemand",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
